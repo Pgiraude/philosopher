@@ -45,7 +45,12 @@ int	error_manager(int error_code, char *msg)
 	if (error_code == 0)
 		return (error_code);
 	if (error_code < 20)
+	{
+		printf("*arg1=nbr_of_philo\targ2=time_to_die(ms)*\n");
+		printf("*arg3=time_to_eat(ms)\targ4=time_to_sleep(ms)*\n");
+		printf("*arg5=nbr_of_times_each_philo_must_eat(optional)*\n");
 		return (error_manager_init(error_code, msg));
+	}
 	if (error_code == 20)
 		printf("Error %d: Failed create threads\n", error_code);
 	if (error_code == 30)
